@@ -63,10 +63,10 @@ class airogs_algorithm(ClassificationAlgorithm):
         # to here with your inference algorithm
 
         out = {
-            "referable-glaucoma-likelihood": rg_likelihood,
-            "referable-glaucoma-binary": rg_binary,
-            "ungradability-score": ungradability_score,
-            "ungradability-binary": ungradability_binary
+            "referable-glaucoma-likelihood": rg_likelihood,  # Likelihood for 'referable glaucoma'
+            "referable-glaucoma-binary": rg_binary,  # True if 'referable glaucoma', False if 'no referable glaucoma'
+            "ungradability-score": ungradability_score,  # True if 'ungradable', False if 'gradable'
+            "ungradability-binary": ungradability_binary  # The higher the value, the more likely the label in 'ungradable'
         }
 
         return out
