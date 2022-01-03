@@ -66,7 +66,7 @@ class airogs_algorithm(ClassificationAlgorithm):
             "referable-glaucoma-likelihood": rg_likelihood,  # Likelihood for 'referable glaucoma'
             "referable-glaucoma-binary": rg_binary,  # True if 'referable glaucoma', False if 'no referable glaucoma'
             "ungradability-score": ungradability_score,  # True if 'ungradable', False if 'gradable'
-            "ungradability-binary": ungradability_binary  # The higher the value, the more likely the label in 'ungradable'
+            "ungradability-binary": ungradability_binary  # The higher the value, the more likely the label is 'ungradable'
         }
 
         return out
