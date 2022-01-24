@@ -39,10 +39,10 @@ class airogs_algorithm(ClassificationAlgorithm):
 
         self._file_loaders = dict(input_image=DummyLoader())
 
-        self.output_keys = ["referable-glaucoma-likelihood", 
-                            "referable-glaucoma-binary",
-                            "ungradability-score",
-                            "ungradability-binary"]
+        self.output_keys = ["multiple-referable-glaucoma-likelihoods", 
+                            "multiple-referable-glaucoma-binary",
+                            "multiple-ungradability-scores",
+                            "multiple-ungradability-binary"]
     
     def load(self):
         for key, file_loader in self._file_loaders.items():
@@ -67,8 +67,7 @@ class airogs_algorithm(ClassificationAlgorithm):
         return out
     
     def process_case(self, *, idx, case):
-        # Load and test the image for this case
-        # input_image, input_image_file_path = self._load_input_image(case=case)
+        # Load and test the image(s) for this case
         if case.path.suffix == '.tiff':
             results = []
             with tifffile.TiffFile(case.path) as stack:
@@ -78,8 +77,6 @@ class airogs_algorithm(ClassificationAlgorithm):
         else:
             input_image = SimpleITK.ReadImage(str(case.path))
             input_image_array = SimpleITK.GetArrayFromImage(input_image)
-
-            # Classify input_image image
             results = [self.predict(input_image_array=input_image_array)]
         
         results = self.combine_dicts(results)
@@ -102,10 +99,10 @@ class airogs_algorithm(ClassificationAlgorithm):
         # to here with your inference algorithm
 
         out = {
-            "referable-glaucoma-likelihood": rg_likelihood,
-            "referable-glaucoma-binary": rg_binary,
-            "ungradability-score": ungradability_score,
-            "ungradability-binary": ungradability_binary
+            "multiple-referable-glaucoma-likelihoods": rg_likelihood,
+            "multiple-referable-glaucoma-binary": rg_binary,
+            "multiple-ungradability-scores": ungradability_score,
+            "multiple-ungradability-binary": ungradability_binary
         }
 
         return out
