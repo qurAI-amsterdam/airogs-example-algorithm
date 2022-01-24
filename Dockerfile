@@ -21,7 +21,9 @@ RUN python -m pip install --user -U pip
 # e.g. `python -m pip install sklearn==...`
 
 COPY --chown=algorithm:algorithm requirements.txt /opt/algorithm/
+RUN python -m pip install --user --upgrade pip
 RUN python -m pip install --user -rrequirements.txt
+RUN python -m pip show imagecodecs
 
 COPY --chown=algorithm:algorithm process.py /opt/algorithm/
 

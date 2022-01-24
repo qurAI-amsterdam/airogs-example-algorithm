@@ -2,4 +2,4 @@
 
 ./build.sh
 
-docker save airogs_algorithm | gzip -c > airogs_algorithm.tar.gz
+docker save airogs_algorithm | xz -c > airogs_algorithm.tar.xz

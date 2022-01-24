@@ -1,5 +1,6 @@
-
 evalutils==0.2.4
-
 scikit-learn==0.20.2
 scipy==1.2.1
+tqdm==4.62.2
+tifffile==2021.8.8
+imagecodecs==2021.11.20

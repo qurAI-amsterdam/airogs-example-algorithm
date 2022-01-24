@@ -32,8 +32,9 @@ In the Dockerfile
 3. Run `test.sh` (or `test.bat` if you are on Windows and not on WSL 2.0) to build the container. This will also build the container. The output of this script should end like this (probably with different values for the four model outputs):
     ```
     airogs_algorithm-output
-    0.27477490364126184true4.121623554618927falseTests successfully passed...
-    airogs_algorithm-output
+    100%|██████████| 10/10 [00:01<00:00,  8.29it/s]
+    [0.2747808088700938, 0.1968278557040863, 0.3251099105817551, 0.251309593349525, 0.16331946039347478, 0.09951439097624658, 0.1523684949346395, 0.14107948132725376, 0.16315452661077018, 0.1829633503171027][true, false, true, true, false, false, false, false, false, false][4.121712133051407, 2.952417835561295, 4.876648658726326, 3.769643900242875, 2.4497919059021216, 1.4927158646436987, 2.2855274240195924, 2.1161922199088066, 2.4473178991615527, 2.7444502547565404][false, true, false, false, true, true, true, true, true, true]
+    Tests successfully passed...
     ```
 
 4. Run `export.sh`, which will produce `airogs_algorithm.tar.gz`. We will need this file later when uploading the algorithm to Grand Challenge.
@@ -44,7 +45,7 @@ In the Dockerfile
     
     b. `Inputs`: Choose `Color Fundus Image (Image)`.
 
-    c. `Outputs`: Choose `Referable Glaucoma Likelihood (Float)`, `Referable Glaucoma Binary Decision (Bool)`, `Ungradability Score (Float)`, `Ungradability Binary Decision (Bool)`.
+    c. `Outputs`: Choose `Multiple Referable Glaucoma Likelihood (Anything)`, `Multiple Referable Glaucoma Binary Decisions (Anything)`, `Multiple Ungradability Scores (Anything)`, `Multiple Ungradability Binary Decisions (Anything)`.
 
     When you are done, click `Save`.
 
