@@ -20,7 +20,7 @@ This codebase uses a not-so-smart algorithm that you may want to adapt to a smar
 
 1. Change the `Dockerfile`.
 
-    a. You may want to change `FROM python:3.7-slim` to another base image that already has some machine learning packages installed, such as `FROM pytorch/pytorch:1.9.0-cuda11.1-cudnn8-runtime`. If you change this, you should also change this in `test.sh` or `test.bat`.
+    a. You may want to change `FROM python:3.7-slim` to another base image that already has some machine learning packages installed, such as `FROM pytorch/pytorch:1.9.0-cuda11.1-cudnn8-runtime`.
 In the Dockerfile
 
     b. Install the required packages, see comment in `Dockerfile` for an example.
